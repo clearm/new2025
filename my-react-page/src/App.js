@@ -4,6 +4,10 @@
 import { useState } from 'react';
 // import Footer from './Layouts/Footer';
 
+import './Games/TicTacToeStyle.css';
+
+import TicTacToe from './Games/TicTacToe';
+
 function App() {
 
   const [currentPage, setCurrentPage] = useState('home');
@@ -14,13 +18,14 @@ function App() {
         return  (
           <section className="Intro-section">
             <h1> Home Page</h1>
+            <TicTacToe></TicTacToe>
           </section>
         );
       case 'about':
         return (
           <section className="Intro-section">
             <h1> about Page</h1>
-            {/* <Box></Box> */}
+
           </section>
         );
 
