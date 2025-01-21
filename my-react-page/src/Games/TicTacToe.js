@@ -11,6 +11,7 @@ import { useState } from 'react';
   }
 
   function Board({ xIsNext, squares, onPlay }) {
+
     function handleClick(i) {
       if (calculateWinner(squares) || squares[i]) {
         return;
@@ -57,9 +58,9 @@ import { useState } from 'react';
   // 시작 함수 라고 봐야 할 듯.
   export default function TicTacToe() {
 
-    const [history, setHistory] = useState([Array(9).fill(null)]);
+    const [history, setHistory] = useState([Array(9).fill(null)]); // 초기화
     const [currentMove, setCurrentMove] = useState(0);
-    const xIsNext = currentMove % 2 === 0;
+    const xIsNext = currentMove % 2 === 0;   // 짝수
     const currentSquares = history[currentMove];
 
     function handlePlay(nextSquares) {
