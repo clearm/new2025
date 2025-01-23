@@ -1,5 +1,5 @@
 // import logo from './logo.svg';
-// import './App.css';
+import './App.css';
 // import './Intro.css';
 import { useState } from 'react';
 // import Footer from './Layouts/Footer';
@@ -12,8 +12,9 @@ import Test1 from './Test/Test1';
 
 import Test2 from './Test/Test2';
 
+import Test3 from './Test/Test3';
 
-
+import Test4 from './Test/Test4';
 
 
 function App() {
@@ -51,6 +52,22 @@ function App() {
             <Test2></Test2>
           </section>
         );
+
+      case 'test3':
+        return (
+            <section className="Intro-section">
+              <h1> Test3 Page</h1>
+              <Test3></Test3>
+            </section>
+          );
+
+      case 'test4':
+        return (
+            <section className="Intro-section">
+              <h1> Test4 Page</h1>
+              <Test4></Test4>
+            </section>
+          );
 
       case 'services':
         return (
@@ -94,8 +111,8 @@ function App() {
                   <li><button onClick={() => setCurrentPage('test2')} className="bg-blue-400 px-5 rounded-xl hover:text-blue-300 shadow-md ">Test2</button></li>
                 </ul>
                 <ul className="flex space-x-1 my-3" >
-                  <li><button onClick={() => setCurrentPage('about2')} className="bg-blue-400 px-5 rounded-xl hover:text-blue-300 shadow-md ">About</button></li>
-                  <li><button onClick={() => setCurrentPage('about2')} className="bg-blue-400 px-5 rounded-xl hover:text-blue-300 shadow-md ">About</button></li>
+                  <li><button onClick={() => setCurrentPage('test3')} className="bg-blue-400 px-5 rounded-xl hover:text-blue-300 shadow-md ">Test3 </button></li>
+                  <li><button onClick={() => setCurrentPage('test4')} className="bg-blue-400 px-5 rounded-xl hover:text-blue-300 shadow-md ">Test4</button></li>
                   <li><button onClick={() => setCurrentPage('about2')} className="bg-blue-400 px-5 rounded-xl hover:text-blue-300 shadow-md ">About</button></li>
                 </ul>
               </nav>

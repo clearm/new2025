@@ -7,12 +7,30 @@ import './Test2.css';
 const Test2 = () => {
 
     const [index, setIndex] = useState(0);
+    const [showMore, setShowMore] = useState(false);
 
     function handleClick() {
-        setIndex(index + 1);
+
+        console.log(index);
+
+        if(sculptureList.length-1 === index ){
+            alert('마지막 페이지 입니다.');
+        }
+        // setIndex(index + 1);
+
+        if (sculptureList.length-1 > index) {
+            setIndex(index + 1);
+        }
+
+
     }
 
-  let sculpture = sculptureList[index];
+    function handleMoreClick() {
+        setShowMore(!showMore);
+    }
+
+    let sculpture = sculptureList[index];
+
 
     return (
         <>
@@ -26,13 +44,17 @@ const Test2 = () => {
           <h3>
             ({index + 1} of {sculptureList.length})
           </h3>
+          <button className='Test2-cyan-btn' onClick={handleMoreClick}>
+            {showMore ? 'Hide' : 'Show'} details
+          </button>
+
+          {showMore && <p>{sculpture.description}</p>}
+
           <img
             src={sculpture.url}
             alt={sculpture.alt}
           />
-          <p>
-            {sculpture.description}
-          </p>
+
         </>
       );
 
